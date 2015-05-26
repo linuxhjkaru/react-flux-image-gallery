@@ -1,0 +1,23 @@
+{
+  "name": "flux-image-gallery",
+  "version": "0.0.1",
+  "description": "Image Gallery with react and flux",
+  "main": "app.js",
+  "devDependencies": {
+    "browserify": "^10.2.1",
+    "flux": "^2.0.3",
+    "gulp": "^3.8.11",
+    "gulp-streamify": "0.0.5",
+    "gulp-uglify": "^1.2.0",
+    "object-assign": "^2.0.0",
+    "react": "^0.13.3",
+    "reactify": "^1.1.1",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.2.1"
+  },
+  "scripts": {
+    "start": "watchify -o bundle.js -v -d app.js",
+    "build": "node_modules/.bin/gulp"
+  },
+  "author": "Linux Hjkaru"
+}
