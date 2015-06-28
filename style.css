@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 .application-container {
-  width: 400px;
+  width: 800px;
   margin: 0 auto;
 }
 .arrow,
@@ -15,18 +15,27 @@
   -ms-user-select: none;
   user-select: none;
 }
-.arrow {
+.arrow.left {
   position: relative;
-  top: -100px;
+  top: -170px;
+  padding: 10px;
+  margin-left: 100px
+}
+
+.arrow.right {
+  position: relative;
+  top: -170px;
   padding: 10px;
 }
+
 .carousel-stage {
-  width: 300px;
-  height: 200px;
+  width: 500px;
+  height: 400px;
   border: 1px solid black;
   overflow: hidden;
   display: inline-block;
   position: relative;
+  margin-top: 0px;
 }
 .carousel-stage ul.carousel-list {
   display: inline-block;
@@ -38,18 +47,18 @@
 }
 .carousel-stage ul.carousel-list li {
   display: inline-block;
-  width: 300px;
-  height: 200px;
+  width: 500px;
+  height: 400px;
   float: left;
 }
 .carousel-stage ul.carousel-list li img {
   object-fit: cover;
   object-position: center center;
-  width: 300px;
-  height: 200px;
+  width: 500px;
+  height: 400px;
 }
 .carousel-stage ul.dots {
-  width: 300px;
+  width: 500px;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -69,4 +78,18 @@
 }
 .carousel-stage ul.dots li.active {
   background-color: #ccc;
+}
+
+.slide-option {
+  margin-top: 5px
+}
+
+#linear-top {
+  margin-top: 10px;
+  width: 500px;
+}
+
+#linear-bottom {
+  margin-bottom: 10px;
+  width: 500px;
 }

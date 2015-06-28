@@ -34,6 +34,25 @@ var ImageGalleryActions = {
       data: data
     })
   },
+
+  showBullet: function() {
+    AppDispatcher.handleAction({
+      actionType: ImageGalleryConstants.SHOW_BULLET
+    })
+  },
+
+  playSlide: function(data) {
+    AppDispatcher.handleAction({
+      actionType: ImageGalleryConstants.PLAY_SLIDE,
+      data: data
+    })
+  },
+
+  stopSlide: function() {
+    AppDispatcher.handleAction({
+      actionType: ImageGalleryConstants.STOP_SLIDE
+    })
+  }
 }
 
 module.exports = ImageGalleryActions;

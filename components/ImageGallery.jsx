@@ -4,6 +4,8 @@ var ImageStore = require('../stores/ImageStore.jsx');
 var Carousel = require('./Carousel.jsx');
 var Images = require('./Images.jsx');
 var ImageGalleryActions = require('../actions/ImageGalleryActions.jsx');
+var mui = require("material-ui");
+var AppBar = mui.AppBar;
 
 function getCarouselImageState() {
   return {
@@ -30,8 +32,12 @@ var Application = React.createClass({
   render: function() {
     return (
       <section className="application-container">
+        <AppBar title='Gallery' iconClassNameRight="muidocs-icon-navigation-expand-more"/>
         <Carousel images={this.state.images}
                   selected={this.state.carousel.current}
+                  isShowBullet={this.state.carousel.isShowBullet}
+                  isSlide={this.state.carousel.isSlide}
+                  interval={this.state.carousel.interval}
                   onClickLeft={this.onClickLeft}
                   onClickRight={this.onClickRight}
                   onSelectImage={this.onSelectImage} />

@@ -1,5 +1,5 @@
 var React = require("react");
-var Application = require("./components/ImageGallery.jsx");
+var Application = require("./components/App.jsx");
 var ImageGalleryActions = require("./actions/ImageGalleryActions.jsx");
 
 var images = ["images/cat1.jpg", "images/cat2.jpg", "images/cat3.jpg",

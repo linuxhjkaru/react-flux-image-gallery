@@ -1,4 +1,7 @@
 var React = require("react");
+var mui = require("material-ui");
+var TextField = mui.TextField;
+var FlatButton = mui.FlatButton;
 
 var ImageForm = React.createClass({
   propTypes: {
@@ -10,11 +13,15 @@ var ImageForm = React.createClass({
   },
 
   render: function() {
+    var divStyle = {
+      marginTop: 10,
+      marginLeft: 200
+    };
+
     return (
-      <form onSubmit={this.onSubmit}>
-        <input type="text" placeholder="Enter URL" size="30"
-               value={this.state.url} onChange={this.handleChange} />
-        <input type="submit" value="Add URL" />
+      <form onSubmit={this.onSubmit} style={divStyle}>
+        <TextField defaultValue={this.state.url} onChange={this.handleChange} />
+        <FlatButton label="ADD IMAGE URL" primary={true}/>
       </form>
     );
   },

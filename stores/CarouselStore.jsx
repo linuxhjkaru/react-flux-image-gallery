@@ -4,7 +4,8 @@ var CarouselConstants = require('../constants/CarouselConstants.jsx');
 var ImageStore = require('../stores/ImageStore.jsx');
 var assign = require('object-assign');
 
-var _current = 4, _count = 0, _animating = false;
+var _current = 4, _count = 0, _animating = false, _isSlide = false,
+  _interval = 2000, _isShowBullet = true;
 
 function loadImageData(data){
   _count = data.length;
@@ -44,11 +45,27 @@ function selectImage(index) {
   }.bind(this), 300);
 }
 
+function showBullet() {
+  _isShowBullet = !_isShowBullet;
+}
+
+function playSlide(data) {
+  _interval = data;
+  _isSlide = true;
+}
+
+function stopSlide() {
+  _isSlide = false;
+}
+
 var CarouselStore = assign({}, EventEmitter.prototype, {
   getState: function() {
     return {
       current: _current,
-      count: _count
+      count: _count,
+      isSlide: _isSlide,
+      interval: _interval,
+      isShowBullet: _isShowBullet
     }
   },
 
@@ -80,6 +97,18 @@ AppDispatcher.register(function(payload) {
 
     case CarouselConstants.SEL_IMAGE:
       handleSelectImage(action.data);
+      break;
+
+    case CarouselConstants.SHOW_BULLET:
+      showBullet();
+      break;
+
+    case CarouselConstants.PLAY_SLIDE:
+      playSlide(action.data);
+      break;
+
+    case CarouselConstants.STOP_SLIDE:
+      stopSlide();
       break;
 
     case CarouselConstants.ADD_IMAGE:

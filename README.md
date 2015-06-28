@@ -1,7 +1,5 @@
 REACT AND FLUX EXAMPLE APP
 
-This is a simple app to know how to react and flux work.
-
 HOW TO RUN APP IN LOCAL
 
 ```
